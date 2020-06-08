@@ -37,7 +37,7 @@ $POSTGRES --dbname "orders" <<-EOSQL
 
     CREATE TABLE IMAGES(
         id SERIAL PRIMARY KEY,
-        product_id INT NOT NULL,
+        product_id INT REFERENCES PRODUCTS(id),
         name VARCHAR NOT NULL,
         size INT,
         content_type VARCHAR,
